@@ -1,6 +1,21 @@
-import react from 'react'
+import react, { useContext, useState } from 'react'
+import { CartContext } from '../../context/CartContext'
 import ItemCount from '../itemCount/ItemCount'
+
+
 const ItemDetail = ({ producto }) => {
+    const [cantidadAgregada, setCantidadAgregada] = useState(0)
+    const [compra, setCompra] = useState(false)
+    const { addItem } = useContext(CartContext)
+
+
+    const onAdd = (cantidad) => {
+        addItem(producto, cantidad)
+        //setCantidadAgregada(cantidad)
+        setCompra(true)
+
+    }
+    console.log(cantidadAgregada)
     return (
         <section className='flex items-center '>
             <div class="relative m-10 flex w-full max-w-xs flex-col items-center  rounded-lg bg-orange-300 shadow-md">
@@ -18,12 +33,14 @@ const ItemDetail = ({ producto }) => {
 
                 </div>
 
+                {compra && <p>Agregaste {producto.name} en el carrito ✔</p>}
 
-                <ItemCount stock={producto.stock} />
+                {compra ? <button className='flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700  my-3'>Ir al carrito</button>
+                    : <ItemCount stock={producto.stock} onAdd={onAdd} />}
 
             </div>
             <article className='w-[40%]  text-xl'>
-            <h1 className="text-3xl my-8">DETALLE DEL PRODUCTO</h1>
+                <h1 className="text-3xl my-8">DETALLE DEL PRODUCTO</h1>
                 <p>{producto.descripcion}</p>
             </article>
         </section>

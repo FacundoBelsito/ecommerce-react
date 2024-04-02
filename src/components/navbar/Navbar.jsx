@@ -1,6 +1,6 @@
 import './navbar.css'
 import CartWidget from '../cartWidget/CartWidget'
-import { NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 
 const Navbar = () => {
@@ -10,13 +10,13 @@ const Navbar = () => {
                 <NavLink className='link text-2xl' to='/' > FERRETERIA eNOVA</NavLink>
                 <div className='w-3/5 text-lg flex justify-between'>
                     <NavLink to='/categories/herramientas'>HERRAMIENTAS</NavLink>
-                    <NavLink to ='/categories/materiales'>MATERIALES</NavLink>
-                    <NavLink to ='/categories/herramientaselectricas'>HERRAMIENTRAS ELECTRICAS</NavLink>
-                    <NavLink to ='/categories/elementosdeseguridad'>ELEMENTOS DE SEGURIDAD</NavLink>
-
+                    <NavLink to='/categories/materiales'>MATERIALES</NavLink>
+                    <NavLink to='/categories/herramientaselectricas'>HERRAMIENTRAS ELECTRICAS</NavLink>
+                    <NavLink to='/categories/elementosdeseguridad'>ELEMENTOS DE SEGURIDAD</NavLink>
                 </div>
-                <CartWidget />
-
+                <NavLink to='/cart' className='no-underline'>
+                    <CartWidget counter={0}/>
+                </NavLink>
             </nav>
         </div>
     )
