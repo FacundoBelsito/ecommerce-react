@@ -1,13 +1,13 @@
 import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import './CartWidget.css'
-const CartWidget = ({counter}) => {
-    const{cart}=useContext(CartContext)
-    console.log(cart)
+const CartWidget = ({ counter }) => {
+    const { cartQuantity } = useContext(CartContext)
+
     return (
         <div>
             <img className='cartWidget' src='./img/carrito.png' alt='carrito' />
-           <span className='badge'>{cart.length}</span>
+            {cartQuantity() > 0 && <span className='badge'>{cartQuantity()}</span>}
         </div>
     )
 }

@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import { getProducts } from '../../mock/productos'
 import ItemList from '../itemList/ItemList'
 import { useParams } from 'react-router-dom'
+import Loader from '../loader/Loader'
+
 
 
 //import { collection, getDocs, query, where } from 'firebase/firestore'
@@ -33,7 +35,11 @@ export const ItemListContainer = (props) => {
     }, [categoryId])
 
     if(loading){
-       return <h1>Cargando producto...</h1>
+       return(
+           <Loader/>
+       )
+        
+       
     }
 
     //FIREBASE!!!!
