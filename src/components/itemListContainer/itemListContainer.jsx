@@ -19,19 +19,7 @@ export const ItemListContainer = (props) => {
 
 
 
-    // useEffect(() => {
-    //     setLoading(true)
-    //     getProducts()
-    //         .then((res) => {
-    //             if (categoryId) {
-    //                 setProductos(res.filter((prod) => prod.category === categoryId))
-    //             } else {
-    //                 setProductos(res)
-    //             }
-    //         })
-    //         .catch((error) => console.log(error, 'error'))
-    //         .finally(() => setLoading(false))
-    // }, [categoryId])
+    
 
 
     //FIREBASE!!!!
