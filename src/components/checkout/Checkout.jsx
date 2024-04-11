@@ -58,15 +58,15 @@ const Checkout = () => {
     return (
 
         <div>
-            {orderId !== '' ? <div>
-                <h4>Generaste tu orden con exito!</h4>
-                <h5>El id es:{orderId}</h5>
-                <Link to='/'>Volver al inicio</Link>
+            {orderId !== '' ? <div className="mt-12 ml-8">
+                <h4 className="text-2xl">Generaste tu orden con exito!</h4>
+                <h5 className="mt-4 my-4 text-lg">El id es:{orderId}</h5>
+                <Link className="flex items-center justify-center rounded-md bg-slate-900 px-2 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 my-3 w-40" to='/'>Volver al inicio</Link>
             </div>
                 :
                 <div className="flex flex-col items-center gap-y-8">
-                    <h1>Completá con tus datos</h1>
-                    <form className="w-64" onSubmit={finalizarCompra} >
+                    <h1 className="text-2xl mt-10">Completá con tus datos</h1>
+                    <form className="w-64 mt-10" onSubmit={finalizarCompra} >
                         <div className="">
                             <label for="name" className="block text-gray-800 font-bold">Nombre:</label>
                             <input name="name" placeholder="Ingrese su nombre" type="text" className="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" onChange={userData} />

@@ -2,7 +2,7 @@ import {Link} from "react-router-dom"
 
 const Item = ({ producto }) => {
     return (
-        <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg bg-orange-300 shadow-md">
+        <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg bg-brown-300 shadow-md border border-black border-2">
             <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
                 <img className="object-cover" src={producto.imagen} alt={producto.name} />
             </a>

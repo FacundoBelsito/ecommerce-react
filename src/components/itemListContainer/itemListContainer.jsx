@@ -1,7 +1,6 @@
 import './itemListContainer.css'
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getProducts } from '../../mock/productos'
 import ItemList from '../itemList/ItemList'
 import { useParams } from 'react-router-dom'
 import Loader from '../loader/Loader'
